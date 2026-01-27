@@ -24,7 +24,7 @@ const values = [
     icon: Users,
     title: "Community First",
     description:
-      "We're not just a deli—we're your neighbors. We believe in building relationships and giving back to the Cleveland community that supports us.",
+      "We're not just a deli - we're your neighbors. We believe in building relationships and giving back to the Cleveland community that supports us.",
   },
   {
     icon: Award,
@@ -45,7 +45,7 @@ const timeline = [
     year: "Early 2024",
     title: "Finding Our Home",
     description:
-      "We found the perfect location on historic Church Street—a space with character that felt just right for our vision.",
+      "We found the perfect location on historic Church Street - a space with character that felt just right for our vision.",
   },
   {
     year: "Mid 2024",
@@ -82,7 +82,7 @@ export default function AboutPage() {
               <p className="mb-6 text-lg text-muted-foreground">
                 Church Street Deli was born from a love of great food and a
                 desire to create a gathering place for our community. We
-                believe that a sandwich isn&apos;t just a meal—it&apos;s an experience
+                believe that a sandwich isn&apos;t just a meal - it&apos;s an experience
                 that brings people together.
               </p>
               <p className="text-muted-foreground">
