@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
 const hours = [
@@ -21,14 +22,15 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand & Description */}
           <div className="space-y-4">
-            <div>
-              <h3 className="font-serif text-xl font-bold text-primary">
-                Church Street
-              </h3>
-              <p className="text-xs tracking-widest text-muted-foreground">
-                DELI
-              </p>
-            </div>
+            <Link href="/">
+              <Image
+                src="/logo2.png"
+                alt="Church Street Deli"
+                width={120}
+                height={43}
+                className="h-10 w-auto"
+              />
+            </Link>
             <p className="text-sm text-muted-foreground">
               Serving fresh, delicious sandwiches, subs, and salads in the heart
               of Cleveland, TN since 2024. Made with love, served with a smile.

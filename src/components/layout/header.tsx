@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, ShoppingBag, X } from "lucide-react";
 import { useState } from "react";
@@ -28,15 +29,15 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 md:h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex flex-col">
-            <span className="font-serif text-xl font-bold text-primary md:text-2xl">
-              Church Street
-            </span>
-            <span className="text-xs tracking-widest text-muted-foreground md:text-sm">
-              DELI
-            </span>
-          </div>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo2.png"
+            alt="Church Street Deli"
+            width={140}
+            height={50}
+            className="h-10 w-auto md:h-12"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
