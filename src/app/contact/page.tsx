@@ -163,30 +163,18 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
 
-              {/* Map Placeholder */}
-              <div className="mt-8 aspect-video overflow-hidden rounded-xl bg-muted">
-                <div className="flex h-full items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/5">
-                  <div className="text-center">
-                    <MapPin className="mx-auto mb-2 h-10 w-10 text-primary/50" />
-                    <p className="font-medium">191 Church Street NE</p>
-                    <p className="text-sm text-muted-foreground">
-                      Cleveland, TN 37311
-                    </p>
-                    <Button
-                      variant="link"
-                      className="mt-2"
-                      asChild
-                    >
-                      <a
-                        href="https://maps.google.com/?q=191+Church+Street+NE+Cleveland+TN+37311"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Open in Google Maps
-                      </a>
-                    </Button>
-                  </div>
-                </div>
+              {/* Google Map */}
+              <div className="mt-8 aspect-video overflow-hidden rounded-xl">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.8!2d-84.8766!3d35.1595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885e0e0e0e0e0e0e%3A0x0!2s191%20Church%20St%20NE%2C%20Cleveland%2C%20TN%2037311!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Church Street Deli Location"
+                />
               </div>
             </motion.div>
 
