@@ -31,7 +31,7 @@ export function Footer() {
             </div>
             <p className="text-sm text-muted-foreground">
               Serving fresh, delicious sandwiches, subs, and salads in the heart
-              of Chattanooga since 2024. Made with love, served with a smile.
+              of Cleveland, TN since 2024. Made with love, served with a smile.
             </p>
           </div>
 
@@ -81,9 +81,9 @@ export function Footer() {
               <li className="flex items-start gap-2 text-sm">
                 <MapPin className="mt-0.5 h-4 w-4 text-primary" />
                 <span className="text-muted-foreground">
-                  123 Church Street
+                  191 Church Street NE
                   <br />
-                  Chattanooga, TN 37402
+                  Cleveland, TN 37311
                 </span>
               </li>
               <li className="flex items-center gap-2 text-sm">

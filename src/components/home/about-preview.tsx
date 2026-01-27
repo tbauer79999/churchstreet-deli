@@ -20,7 +20,7 @@ const values = [
   {
     icon: Users,
     title: "Community First",
-    description: "Proudly serving our Chattanooga neighbors since day one",
+    description: "Proudly serving our Cleveland neighbors since day one",
   },
 ];
 
@@ -84,7 +84,7 @@ export function AboutPreview() {
             <p className="mb-6 text-muted-foreground">
               Church Street Deli was born from a simple dream: to create a place
               where the community could gather over great food. Located in the
-              heart of Chattanooga, we&apos;re more than just a deli—we&apos;re your
+              heart of Cleveland, we&apos;re more than just a deli—we&apos;re your
               neighbors, your friends, and your go-to spot for a delicious meal.
             </p>
             <p className="mb-8 text-muted-foreground">

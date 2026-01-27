@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const testimonials = [
   {
     name: "Sarah M.",
-    text: "The Church Street Classic is absolutely divine! Best sandwich I've had in Chattanooga. The staff is so friendly, and you can really taste the quality ingredients.",
+    text: "The Church Street Classic is absolutely divine! Best sandwich I've had in Cleveland. The staff is so friendly, and you can really taste the quality ingredients.",
     rating: 5,
   },
   {

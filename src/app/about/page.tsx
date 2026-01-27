@@ -24,7 +24,7 @@ const values = [
     icon: Users,
     title: "Community First",
     description:
-      "We're not just a deli—we're your neighbors. We believe in building relationships and giving back to the Chattanooga community that supports us.",
+      "We're not just a deli—we're your neighbors. We believe in building relationships and giving back to the Cleveland community that supports us.",
   },
   {
     icon: Award,
@@ -51,7 +51,7 @@ const timeline = [
     year: "Mid 2024",
     title: "Grand Opening",
     description:
-      "Church Street Deli officially opened its doors, welcoming our first customers and beginning our journey as Chattanooga's newest neighborhood spot.",
+      "Church Street Deli officially opened its doors, welcoming our first customers and beginning our journey as Cleveland's newest neighborhood spot.",
   },
   {
     year: "Today",
@@ -86,7 +86,7 @@ export default function AboutPage() {
                 that brings people together.
               </p>
               <p className="text-muted-foreground">
-                Located in the heart of Chattanooga, Tennessee, we&apos;re proud to
+                Located in the heart of Cleveland, Tennessee, we&apos;re proud to
                 serve our neighbors with handcrafted sandwiches, fresh salads,
                 homemade soups, and warm hospitality that keeps you coming back.
               </p>
@@ -270,9 +270,9 @@ export default function AboutPage() {
                   <div>
                     <p className="font-semibold">Address</p>
                     <p className="text-muted-foreground">
-                      123 Church Street
+                      191 Church Street NE
                       <br />
-                      Chattanooga, TN 37402
+                      Cleveland, TN 37311
                     </p>
                   </div>
                 </div>
@@ -315,9 +315,9 @@ export default function AboutPage() {
                 <div className="text-center">
                   <MapPin className="mx-auto mb-4 h-16 w-16 text-primary/50" />
                   <p className="font-serif text-lg font-semibold">
-                    123 Church Street
+                    191 Church Street NE
                   </p>
-                  <p className="text-muted-foreground">Chattanooga, TN 37402</p>
+                  <p className="text-muted-foreground">Cleveland, TN 37311</p>
                 </div>
               </div>
             </motion.div>

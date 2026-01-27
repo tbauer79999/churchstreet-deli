@@ -16,9 +16,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Church Street Deli | Chattanooga's Favorite Neighborhood Deli",
-  description: "Fresh sandwiches, subs, salads, and soups made with love in the heart of Chattanooga, TN. Order online for pickup!",
-  keywords: ["deli", "sandwiches", "Chattanooga", "Tennessee", "lunch", "catering", "subs", "salads"],
+  title: "Church Street Deli | Cleveland's Favorite Neighborhood Deli",
+  description: "Fresh sandwiches, subs, salads, and soups made with love in the heart of Cleveland, TN. Order online for pickup!",
+  keywords: ["deli", "sandwiches", "Cleveland", "Tennessee", "lunch", "catering", "subs", "salads"],
 };
 
 export default function RootLayout({

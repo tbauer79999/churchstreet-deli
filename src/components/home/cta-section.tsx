@@ -22,7 +22,7 @@ export function CTASection() {
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-primary-foreground/80">
             Order online for quick pickup or give us a call. We can&apos;t wait to
-            serve you the best deli experience in Chattanooga!
+            serve you the best deli experience in Cleveland!
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Button

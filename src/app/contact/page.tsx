@@ -40,8 +40,8 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    content: "123 Church Street\nChattanooga, TN 37402",
-    link: "https://maps.google.com/?q=123+Church+Street+Chattanooga+TN",
+    content: "191 Church Street NE\nCleveland, TN 37311",
+    link: "https://maps.google.com/?q=191+Church+Street+NE+Cleveland+TN+37311",
   },
   {
     icon: Phone,
@@ -168,9 +168,9 @@ export default function ContactPage() {
                 <div className="flex h-full items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/5">
                   <div className="text-center">
                     <MapPin className="mx-auto mb-2 h-10 w-10 text-primary/50" />
-                    <p className="font-medium">123 Church Street</p>
+                    <p className="font-medium">191 Church Street NE</p>
                     <p className="text-sm text-muted-foreground">
-                      Chattanooga, TN 37402
+                      Cleveland, TN 37311
                     </p>
                     <Button
                       variant="link"
@@ -178,7 +178,7 @@ export default function ContactPage() {
                       asChild
                     >
                       <a
-                        href="https://maps.google.com/?q=123+Church+Street+Chattanooga+TN"
+                        href="https://maps.google.com/?q=191+Church+Street+NE+Cleveland+TN+37311"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

@@ -28,7 +28,7 @@ export function Hero() {
               className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
             >
               <span className="h-2 w-2 rounded-full bg-primary" />
-              Now Open in Chattanooga
+              Now Open in Cleveland, TN
             </motion.div>
 
             <h1 className="mb-6 font-serif text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
@@ -38,7 +38,7 @@ export function Hero() {
 
             <p className="mb-8 text-lg text-muted-foreground md:text-xl">
               Handcrafted sandwiches, subs, and salads made with the finest
-              ingredients. Experience the taste of Chattanooga&apos;s newest
+              ingredients. Experience the taste of Cleveland&apos;s newest
               neighborhood deli.
             </p>
 
@@ -58,7 +58,7 @@ export function Hero() {
             <div className="mt-10 flex flex-wrap justify-center gap-6 lg:justify-start">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>123 Church Street, Chattanooga</span>
+                <span>191 Church Street NE, Cleveland</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-primary" />
