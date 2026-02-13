@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Award, Clock, Heart, Leaf, MapPin, Users } from "lucide-react";
 
@@ -105,14 +106,14 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10">
-                <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-                  <div className="mb-4 text-8xl">👨‍🍳</div>
-                  <p className="font-serif text-xl font-semibold">
-                    Crafted with Care
-                  </p>
-                  <p className="text-sm text-muted-foreground">Since 2024</p>
-                </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
+                <Image
+                  src="/front.png"
+                  alt="Church Street Deli Storefront"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
 
               {/* Stats */}

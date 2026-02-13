@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, Leaf, Users } from "lucide-react";
 
@@ -37,22 +38,13 @@ export function AboutPreview() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative mx-auto aspect-[4/3] max-w-lg overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10">
-              <div className="flex h-full items-center justify-center">
-                {/* Placeholder visual representing deli atmosphere */}
-                <div className="p-8 text-center">
-                  <div className="mb-6 text-8xl">🏪</div>
-                  <div className="space-y-2">
-                    <div className="mx-auto h-2 w-24 rounded-full bg-primary/20" />
-                    <div className="mx-auto h-2 w-32 rounded-full bg-secondary/20" />
-                    <div className="mx-auto h-2 w-20 rounded-full bg-accent/30" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -left-4 top-1/4 h-24 w-24 rounded-full bg-primary/10 blur-3xl" />
-              <div className="absolute -right-4 bottom-1/4 h-32 w-32 rounded-full bg-secondary/10 blur-3xl" />
+            <div className="relative mx-auto aspect-[4/3] max-w-lg overflow-hidden rounded-3xl">
+              <Image
+                src="/front.png"
+                alt="Church Street Deli Storefront"
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* Experience Badge */}
