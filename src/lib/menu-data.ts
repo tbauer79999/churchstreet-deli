@@ -1,10 +1,13 @@
 export type Category =
-  | "sandwiches"
-  | "subs"
+  | "breakfast"
+  | "traditional-favorites"
+  | "signature-sandwiches"
+  | "house-specials"
+  | "hot-dogs"
+  | "soups-chili"
   | "salads"
-  | "soups"
-  | "sides"
-  | "drinks";
+  | "beverages"
+  | "desserts";
 
 export interface MenuItem {
   id: string;
@@ -20,323 +23,251 @@ export interface MenuItem {
 
 export const categories: { id: Category; name: string; description: string }[] = [
   {
-    id: "sandwiches",
-    name: "Sandwiches",
-    description: "Classic deli sandwiches on fresh-baked bread",
+    id: "breakfast",
+    name: "Breakfast Biscuits & Wraps",
+    description: "Start your day right with our hearty breakfast options",
   },
   {
-    id: "subs",
-    name: "Subs",
-    description: "Hearty submarine sandwiches loaded with toppings",
+    id: "traditional-favorites",
+    name: "Traditional Favorites",
+    description: "Classic sandwiches and burgers that never go out of style",
+  },
+  {
+    id: "signature-sandwiches",
+    name: "Signature Sandwiches",
+    description: "All sandwiches come with lettuce, tomato & a pickle spear. Prices include chips and a tea, coffee, or canned soft drink.",
+  },
+  {
+    id: "house-specials",
+    name: "House Specials",
+    description: "Our unique creations you won't find anywhere else",
+  },
+  {
+    id: "hot-dogs",
+    name: "Hot Dogs",
+    description: "Premium Angus beef hot dogs with your choice of toppings",
+  },
+  {
+    id: "soups-chili",
+    name: "Soup & Chili",
+    description: "Homemade soups and chili, made fresh daily",
   },
   {
     id: "salads",
-    name: "Salads",
-    description: "Fresh, crisp salads made to order",
+    name: "Fresh Salads",
+    description: "Crisp, fresh salads made to order",
   },
   {
-    id: "soups",
-    name: "Soups",
-    description: "Homemade soups, perfect for any day",
+    id: "beverages",
+    name: "Beverages",
+    description: "Refreshing drinks to complete your meal",
   },
   {
-    id: "sides",
-    name: "Sides",
-    description: "The perfect accompaniment to any meal",
-  },
-  {
-    id: "drinks",
-    name: "Drinks",
-    description: "Refreshing beverages to complete your order",
+    id: "desserts",
+    name: "Pastries & Desserts",
+    description: "Sweet treats to finish your meal",
   },
 ];
 
 export const menuItems: MenuItem[] = [
-  // Sandwiches
+  // Breakfast Biscuits & Wraps
   {
-    id: "church-street-classic",
-    name: "The Church Street Classic",
-    description: "Our signature sandwich with smoked turkey, honey ham, Swiss cheese, lettuce, tomato, and our secret house sauce on freshly baked sourdough.",
-    price: 12.99,
-    category: "sandwiches",
+    id: "egg-cheese",
+    name: "Egg & Cheese",
+    description: "Fresh eggs and melted cheese on your choice of biscuit or wrap",
+    price: 3.00,
+    category: "breakfast",
+  },
+  {
+    id: "sausage-egg",
+    name: "Sausage & Egg",
+    description: "Savory sausage with fresh eggs on your choice of biscuit or wrap",
+    price: 4.00,
+    category: "breakfast",
+  },
+  {
+    id: "sausage-egg-cheese",
+    name: "Sausage, Egg & Cheese",
+    description: "Classic breakfast combo with sausage, eggs, and cheese",
+    price: 5.00,
+    category: "breakfast",
     isPopular: true,
   },
   {
-    id: "turkey-club",
-    name: "Turkey Club",
-    description: "Triple-decker with oven-roasted turkey, crispy bacon, lettuce, tomato, and mayo on toasted white bread.",
-    price: 11.99,
-    category: "sandwiches",
+    id: "steak-egg",
+    name: "Steak & Egg",
+    description: "Tender steak with fresh eggs on your choice of biscuit or wrap",
+    price: 6.00,
+    category: "breakfast",
+  },
+  {
+    id: "steak-egg-cheese",
+    name: "Steak, Egg & Cheese",
+    description: "Premium steak, eggs, and cheese for a hearty breakfast",
+    price: 7.00,
+    category: "breakfast",
     isPopular: true,
-  },
-  {
-    id: "classic-reuben",
-    name: "Classic Reuben",
-    description: "Tender corned beef, sauerkraut, Swiss cheese, and thousand island dressing on grilled marble rye.",
-    price: 13.49,
-    category: "sandwiches",
-    isPopular: true,
-  },
-  {
-    id: "chicken-salad",
-    name: "Chicken Salad Sandwich",
-    description: "House-made chicken salad with celery, herbs, and a touch of lemon on a buttery croissant.",
-    price: 10.99,
-    category: "sandwiches",
-  },
-  {
-    id: "blt-deluxe",
-    name: "BLT Deluxe",
-    description: "Thick-cut applewood smoked bacon, fresh lettuce, ripe tomatoes, and garlic aioli on toasted sourdough.",
-    price: 10.49,
-    category: "sandwiches",
-  },
-  {
-    id: "veggie-delight",
-    name: "Veggie Delight",
-    description: "Grilled zucchini, roasted red peppers, fresh mozzarella, spinach, and pesto on ciabatta.",
-    price: 10.99,
-    category: "sandwiches",
-    isVegetarian: true,
-  },
-  {
-    id: "roast-beef-cheddar",
-    name: "Roast Beef & Cheddar",
-    description: "Thin-sliced roast beef with sharp cheddar, horseradish cream, and crispy onions on a Kaiser roll.",
-    price: 12.49,
-    category: "sandwiches",
-  },
-  {
-    id: "ham-swiss",
-    name: "Ham & Swiss",
-    description: "Black forest ham, Swiss cheese, Dijon mustard, and pickles on fresh baked rye.",
-    price: 10.99,
-    category: "sandwiches",
   },
 
-  // Subs
+  // Traditional Favorites
   {
-    id: "italian-sub",
-    name: "Italian Sub",
-    description: "Genoa salami, capicola, ham, provolone, lettuce, tomatoes, onions, peppers, and Italian dressing on a hoagie roll.",
-    price: 13.99,
-    category: "subs",
+    id: "chicken-sandwich",
+    name: "Chicken Sandwich",
+    description: "Breaded chicken breast with lettuce, tomato & mayo",
+    price: 10.00,
+    category: "traditional-favorites",
     isPopular: true,
   },
   {
-    id: "meatball-sub",
-    name: "Meatball Sub",
-    description: "House-made meatballs smothered in marinara sauce and melted mozzarella on a toasted hoagie.",
-    price: 12.99,
-    category: "subs",
+    id: "hamburger",
+    name: "Hamburger",
+    description: "Beef patty with lettuce, tomato, pickle & mayo",
+    price: 10.00,
+    category: "traditional-favorites",
+    isPopular: true,
   },
+
+  // Signature Sandwiches
   {
-    id: "philly-cheesesteak",
-    name: "Philly Cheesesteak",
-    description: "Thinly sliced ribeye with sautéed peppers, onions, and melted provolone on a soft hoagie roll.",
-    price: 14.49,
-    category: "subs",
+    id: "italian",
+    name: "Italian",
+    description: "Ham, salami, capicola, prosciutto, provolone, mayo & sub dressing",
+    price: 12.00,
+    category: "signature-sandwiches",
     isPopular: true,
   },
   {
-    id: "chicken-parm-sub",
-    name: "Chicken Parmesan Sub",
-    description: "Breaded chicken cutlet with marinara, melted mozzarella, and parmesan on a toasted hoagie.",
-    price: 13.49,
-    category: "subs",
+    id: "deli-club",
+    name: "The Deli Club",
+    description: "Turkey, ham, bacon, cheddar & mayo",
+    price: 12.00,
+    category: "signature-sandwiches",
+    isPopular: true,
   },
   {
-    id: "tuna-sub",
-    name: "Tuna Sub",
-    description: "Our famous tuna salad with lettuce, tomato, and red onion on a soft hoagie roll.",
-    price: 11.99,
-    category: "subs",
+    id: "blt",
+    name: "BLT",
+    description: "Bacon, lettuce, tomato & mayo",
+    price: 9.00,
+    category: "signature-sandwiches",
+  },
+  {
+    id: "chicken-salad-sandwich",
+    name: "Chicken Salad Sandwich",
+    description: "Made from scratch chicken salad",
+    price: 9.00,
+    category: "signature-sandwiches",
+  },
+  {
+    id: "steak-cheese",
+    name: "Steak and Cheese",
+    description: "Ribeye steak with provolone",
+    price: 13.00,
+    category: "signature-sandwiches",
+    isPopular: true,
+  },
+  {
+    id: "roasted-veggie",
+    name: "Roasted Veggie",
+    description: "Seasonal roasted veggies, mayo & sub dressing",
+    price: 11.00,
+    category: "signature-sandwiches",
+    isVegetarian: true,
+  },
+
+  // House Specials
+  {
+    id: "cheese-turnover",
+    name: "Cheese Turnover",
+    description: "Served with marinara",
+    price: 6.00,
+    category: "house-specials",
+    isVegetarian: true,
+  },
+
+  // Hot Dogs
+  {
+    id: "angus-beef-dog",
+    name: "Angus Beef Dog",
+    description: "Premium Angus beef hot dog",
+    price: 7.00,
+    category: "hot-dogs",
+  },
+
+  // Soup & Chili
+  {
+    id: "chicken-noodle-soup",
+    name: "Chicken Noodle Soup",
+    description: "Classic homestyle broth, chicken & vegetables",
+    price: 6.00,
+    category: "soups-chili",
+    isGlutenFree: true,
+  },
+  {
+    id: "house-chili",
+    name: "House Chili",
+    description: "Slow-cooked savory ground beef with beans",
+    price: 6.00,
+    category: "soups-chili",
+    isGlutenFree: true,
   },
 
   // Salads
   {
-    id: "garden-salad",
-    name: "Garden Salad",
-    description: "Mixed greens, cherry tomatoes, cucumbers, carrots, and red onion with your choice of dressing.",
-    price: 8.99,
-    category: "salads",
-    isVegetarian: true,
-    isGlutenFree: true,
-  },
-  {
-    id: "caesar-salad",
-    name: "Classic Caesar",
-    description: "Crisp romaine, parmesan cheese, croutons, and house-made Caesar dressing.",
-    price: 9.99,
-    category: "salads",
-    isVegetarian: true,
-  },
-  {
-    id: "chef-salad",
-    name: "Chef Salad",
-    description: "Mixed greens topped with turkey, ham, Swiss, cheddar, hard-boiled egg, tomatoes, and cucumbers.",
-    price: 12.99,
-    category: "salads",
-    isGlutenFree: true,
-  },
-  {
-    id: "cobb-salad",
-    name: "Cobb Salad",
-    description: "Grilled chicken, bacon, avocado, blue cheese, hard-boiled egg, and tomatoes over mixed greens.",
-    price: 13.99,
-    category: "salads",
-    isPopular: true,
-    isGlutenFree: true,
-  },
-  {
-    id: "greek-salad",
-    name: "Greek Salad",
-    description: "Romaine, feta cheese, kalamata olives, red onion, cucumber, tomatoes, and Greek dressing.",
-    price: 10.99,
+    id: "house-garden-salad",
+    name: "House Garden Salad",
+    description: "Mixed greens, cucumbers, tomatoes, & shredded cheese. Dressings: Ranch, Italian, Thousand Island, Greek",
+    price: 8.00,
     category: "salads",
     isVegetarian: true,
     isGlutenFree: true,
   },
 
-  // Soups
+  // Beverages
   {
-    id: "soup-of-day",
-    name: "Soup of the Day",
-    description: "Ask about today's freshly made soup selection. Served with crackers.",
-    price: 5.99,
-    category: "soups",
-  },
-  {
-    id: "chicken-noodle",
-    name: "Chicken Noodle Soup",
-    description: "Classic comfort - tender chicken, egg noodles, carrots, and celery in savory broth.",
-    price: 5.99,
-    category: "soups",
-  },
-  {
-    id: "tomato-basil",
-    name: "Tomato Basil Soup",
-    description: "Creamy tomato soup with fresh basil. Perfect with a grilled cheese!",
-    price: 5.99,
-    category: "soups",
-    isVegetarian: true,
-  },
-  {
-    id: "loaded-potato",
-    name: "Loaded Potato Soup",
-    description: "Creamy potato soup topped with bacon, cheddar, sour cream, and chives.",
-    price: 6.49,
-    category: "soups",
-  },
-  {
-    id: "chili",
-    name: "Hearty Chili",
-    description: "Slow-cooked beef and bean chili with a kick. Topped with cheddar and onions.",
-    price: 6.99,
-    category: "soups",
-    isGlutenFree: true,
-  },
-
-  // Sides
-  {
-    id: "chips",
-    name: "Kettle Chips",
-    description: "Crispy kettle-cooked potato chips.",
-    price: 1.99,
-    category: "sides",
+    id: "coffee",
+    name: "Fresh Brewed Coffee",
+    description: "Freshly brewed hot coffee",
+    price: 2.00,
+    category: "beverages",
     isVegetarian: true,
     isGlutenFree: true,
   },
   {
-    id: "pickle-spear",
-    name: "Pickle Spear",
-    description: "Crunchy kosher dill pickle.",
-    price: 0.99,
-    category: "sides",
+    id: "iced-tea",
+    name: "Iced Tea",
+    description: "Freshly brewed iced tea",
+    price: 1.00,
+    category: "beverages",
     isVegetarian: true,
     isGlutenFree: true,
   },
   {
-    id: "coleslaw",
-    name: "Coleslaw",
-    description: "Creamy house-made coleslaw.",
-    price: 2.99,
-    category: "sides",
-    isVegetarian: true,
-    isGlutenFree: true,
-  },
-  {
-    id: "potato-salad",
-    name: "Potato Salad",
-    description: "Classic potato salad with a tangy mustard dressing.",
-    price: 3.49,
-    category: "sides",
-    isVegetarian: true,
-    isGlutenFree: true,
-  },
-  {
-    id: "mac-cheese",
-    name: "Mac & Cheese",
-    description: "Creamy, cheesy macaroni - a comfort food classic.",
-    price: 4.49,
-    category: "sides",
-    isVegetarian: true,
-  },
-  {
-    id: "fruit-cup",
-    name: "Fresh Fruit Cup",
-    description: "Seasonal fresh fruit medley.",
-    price: 3.99,
-    category: "sides",
-    isVegetarian: true,
-    isGlutenFree: true,
-  },
-
-  // Drinks
-  {
-    id: "fountain-drink",
-    name: "Fountain Drink",
-    description: "Coca-Cola, Diet Coke, Sprite, Lemonade, or Sweet Tea.",
-    price: 2.49,
-    category: "drinks",
+    id: "canned-soda",
+    name: "Canned Soda",
+    description: "Your choice of canned soda",
+    price: 1.00,
+    category: "beverages",
     isVegetarian: true,
     isGlutenFree: true,
   },
   {
     id: "bottled-water",
     name: "Bottled Water",
-    description: "Refreshing purified water.",
-    price: 1.99,
-    category: "drinks",
+    description: "Refreshing bottled water",
+    price: 1.00,
+    category: "beverages",
     isVegetarian: true,
     isGlutenFree: true,
   },
+
+  // Desserts
   {
-    id: "coffee",
-    name: "Fresh Brewed Coffee",
-    description: "Locally roasted coffee, served hot.",
-    price: 2.49,
-    category: "drinks",
-    isVegetarian: true,
-    isGlutenFree: true,
-  },
-  {
-    id: "iced-tea",
-    name: "Fresh Brewed Iced Tea",
-    description: "Sweet or unsweet, just like grandma made.",
-    price: 2.49,
-    category: "drinks",
-    isVegetarian: true,
-    isGlutenFree: true,
-  },
-  {
-    id: "lemonade",
-    name: "Fresh Squeezed Lemonade",
-    description: "Made fresh daily with real lemons.",
-    price: 3.49,
-    category: "drinks",
-    isVegetarian: true,
-    isGlutenFree: true,
+    id: "pastries-desserts",
+    name: "Pastries and Desserts",
+    description: "Coming Soon!",
+    price: 0.00,
+    category: "desserts",
   },
 ];
 
