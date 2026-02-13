@@ -20,7 +20,7 @@ const values = [
   {
     icon: Users,
     title: "Community First",
-    description: "Proudly serving our Cleveland neighbors since day one",
+    description: "Opening Feb 18th to serve our Cleveland neighbors",
   },
 ];
 
@@ -63,8 +63,8 @@ export function AboutPreview() {
               transition={{ delay: 0.3 }}
               className="absolute -bottom-6 left-4 rounded-2xl bg-background p-4 shadow-warm md:left-8"
             >
-              <p className="font-serif text-3xl font-bold text-primary">Est. 2024</p>
-              <p className="text-sm text-muted-foreground">Proudly Local</p>
+              <p className="font-serif text-3xl font-bold text-primary">Feb 18</p>
+              <p className="text-sm text-muted-foreground">Grand Opening</p>
             </motion.div>
           </motion.div>
 

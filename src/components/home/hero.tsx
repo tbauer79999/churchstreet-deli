@@ -22,13 +22,19 @@ export function Hero() {
             className="text-center lg:text-left"
           >
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mb-6"
             >
-              <span className="h-2 w-2 rounded-full bg-primary" />
-              Now Open in Cleveland, TN
+              <div className="inline-flex flex-col items-center gap-2 rounded-2xl bg-gradient-to-r from-primary to-primary/80 px-6 py-4 shadow-xl lg:items-start">
+                <span className="text-sm font-bold uppercase tracking-wider text-primary-foreground">
+                  🎉 Grand Opening
+                </span>
+                <span className="font-serif text-3xl font-bold text-primary-foreground md:text-4xl">
+                  February 18th!
+                </span>
+              </div>
             </motion.div>
 
             <h1 className="mb-6 font-serif text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
@@ -37,9 +43,9 @@ export function Hero() {
             </h1>
 
             <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              Handcrafted sandwiches, subs, and salads made with the finest
-              ingredients. Experience the taste of Cleveland&apos;s newest
-              neighborhood deli.
+              Cleveland&apos;s newest neighborhood deli opens February 18th!
+              Handcrafted sandwiches, fresh salads, and homemade soups made with
+              the finest ingredients. Join us for our grand opening celebration!
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
@@ -62,7 +68,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-primary" />
-                <span>Open Daily 7AM - 7PM</span>
+                <span>Mon-Sat: 8AM - 7PM</span>
               </div>
             </div>
           </motion.div>
@@ -100,21 +106,21 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Floating Badge */}
+            {/* Floating Badge - Grand Opening */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="absolute -bottom-4 -right-4 rounded-2xl bg-background p-4 shadow-warm md:-bottom-6 md:-right-6"
+              className="absolute -bottom-4 -right-4 rounded-2xl bg-gradient-to-br from-primary to-primary/80 p-4 shadow-warm md:-bottom-6 md:-right-6"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <span className="text-2xl">⭐</span>
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-foreground/20">
+                  <span className="text-2xl">🎉</span>
                 </div>
                 <div>
-                  <p className="font-serif text-lg font-bold">4.9 Rating</p>
-                  <p className="text-xs text-muted-foreground">
-                    200+ Happy Customers
+                  <p className="font-serif text-lg font-bold text-primary-foreground">Feb 18th</p>
+                  <p className="text-xs text-primary-foreground/90">
+                    Grand Opening
                   </p>
                 </div>
               </div>

@@ -36,28 +36,28 @@ const values = [
 
 const timeline = [
   {
-    year: "2023",
+    year: "2024",
     title: "The Dream Begins",
     description:
       "After years of dreaming and planning, we started developing our concept for a neighborhood deli that would bring the community together.",
   },
   {
-    year: "Early 2024",
+    year: "Late 2025",
     title: "Finding Our Home",
     description:
-      "We found the perfect location on historic Church Street - a space with character that felt just right for our vision.",
+      "We found the perfect location on historic Church Street in Downtown Cleveland - a space with character that felt just right for our vision.",
   },
   {
-    year: "Mid 2024",
-    title: "Grand Opening",
+    year: "February 18, 2026",
+    title: "Grand Opening Day!",
     description:
-      "Church Street Deli officially opened its doors, welcoming our first customers and beginning our journey as Cleveland's newest neighborhood spot.",
+      "Church Street Deli officially opens its doors! Join us as we welcome our first customers and begin our journey as Cleveland's newest neighborhood spot.",
   },
   {
-    year: "Today",
+    year: "The Future",
     title: "Growing Together",
     description:
-      "Every day we're grateful for our amazing customers. We continue to refine our recipes and expand our offerings based on your feedback.",
+      "We can't wait to serve you and become a part of your daily routine. We'll continue to listen to your feedback and expand our offerings as we grow together with the Cleveland community.",
   },
 ];
 
@@ -79,6 +79,10 @@ export default function AboutPage() {
               <h1 className="mb-6 font-serif text-4xl font-bold md:text-5xl">
                 A Neighborhood Deli Built on Passion
               </h1>
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary/80 px-4 py-2 text-sm font-bold uppercase tracking-wider text-primary-foreground">
+                <span>🎉</span>
+                Grand Opening February 18th!
+              </div>
               <p className="mb-6 text-lg text-muted-foreground">
                 Church Street Deli was born from a love of great food and a
                 desire to create a gathering place for our community. We
@@ -86,12 +90,12 @@ export default function AboutPage() {
                 that brings people together.
               </p>
               <p className="mb-6 text-muted-foreground">
-                Located in the heart of Cleveland, Tennessee, we&apos;re proud to
-                serve our neighbors with handcrafted sandwiches, fresh salads,
-                homemade soups, and warm hospitality that keeps you coming back.
+                Opening February 18th in the heart of Downtown Cleveland, Tennessee!
+                We can&apos;t wait to serve our neighbors with handcrafted sandwiches,
+                fresh salads, homemade soups, and warm hospitality.
               </p>
               <p className="text-lg font-medium text-primary">
-                We are excited to be a part of Downtown Cleveland! Please let us know what you would like to see on our menu next!
+                We are excited to be a part of Downtown Cleveland! Join us for our grand opening and please let us know what you would like to see on our menu next!
               </p>
             </motion.div>
 
@@ -118,25 +122,25 @@ export default function AboutPage() {
                 transition={{ delay: 0.4 }}
                 className="absolute -bottom-6 left-4 right-4 grid grid-cols-3 gap-3 md:-bottom-8"
               >
-                <div className="rounded-xl bg-background p-4 text-center shadow-warm">
-                  <p className="font-serif text-2xl font-bold text-primary">
-                    1000+
+                <div className="rounded-xl bg-gradient-to-br from-primary to-primary/80 p-4 text-center shadow-warm">
+                  <p className="font-serif text-2xl font-bold text-primary-foreground">
+                    Feb 18
                   </p>
-                  <p className="text-xs text-muted-foreground">
-                    Happy Customers
+                  <p className="text-xs text-primary-foreground/90">
+                    Grand Opening
                   </p>
                 </div>
                 <div className="rounded-xl bg-background p-4 text-center shadow-warm">
                   <p className="font-serif text-2xl font-bold text-primary">
-                    30+
+                    25+
                   </p>
                   <p className="text-xs text-muted-foreground">Menu Items</p>
                 </div>
                 <div className="rounded-xl bg-background p-4 text-center shadow-warm">
                   <p className="font-serif text-2xl font-bold text-primary">
-                    4.9
+                    Mon-Sat
                   </p>
-                  <p className="text-xs text-muted-foreground">Star Rating</p>
+                  <p className="text-xs text-muted-foreground">8AM-7PM</p>
                 </div>
               </motion.div>
             </motion.div>

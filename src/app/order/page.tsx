@@ -12,12 +12,15 @@ import { useCart } from "@/lib/cart-context";
 import { formatPrice } from "@/lib/menu-data";
 
 const categoryEmojis: Record<string, string> = {
-  sandwiches: "🥪",
-  subs: "🥖",
+  breakfast: "🍳",
+  "traditional-favorites": "🍔",
+  "signature-sandwiches": "🥪",
+  "house-specials": "⭐",
+  "hot-dogs": "🌭",
+  "soups-chili": "🍲",
   salads: "🥗",
-  soups: "🍲",
-  sides: "🍟",
-  drinks: "🥤",
+  beverages: "🥤",
+  desserts: "🍰",
 };
 
 export default function OrderPage() {

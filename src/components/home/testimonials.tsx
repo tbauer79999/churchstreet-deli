@@ -7,18 +7,18 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
-    name: "Sarah M.",
-    text: "The Church Street Classic is absolutely divine! Best sandwich I've had in Cleveland. The staff is so friendly, and you can really taste the quality ingredients.",
+    name: "Opening Soon!",
+    text: "Church Street Deli opens February 18th! Be among our first customers and help us become a beloved part of Downtown Cleveland. We can't wait to serve you!",
     rating: 5,
   },
   {
-    name: "Michael R.",
-    text: "Finally, a deli that gets it right! The Reuben is authentic, piled high, and the rye bread is perfectly toasted. This is my new lunch spot.",
+    name: "Join Us!",
+    text: "We're bringing handcrafted sandwiches, fresh salads, and homemade soups to Church Street. Made with quality ingredients and lots of love. Opening Feb 18th!",
     rating: 5,
   },
   {
-    name: "Jennifer L.",
-    text: "Love supporting local businesses, especially ones this good. The tomato basil soup paired with a half sandwich is the perfect combo. Highly recommend!",
+    name: "Grand Opening",
+    text: "Follow us for updates, special promotions, and behind-the-scenes peeks as we prepare to open. We're excited to become your new favorite lunch spot!",
     rating: 5,
   },
 ];
@@ -55,14 +55,14 @@ export function Testimonials() {
           className="mb-12 text-center"
         >
           <span className="mb-2 inline-block font-medium text-primary">
-            What People Say
+            Grand Opening February 18th
           </span>
           <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl">
-            Loved by Our Community
+            Coming to Downtown Cleveland
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Don&apos;t just take our word for it. Here&apos;s what our customers have
-            to say about their Church Street Deli experience.
+            We&apos;re thrilled to announce our grand opening! Here&apos;s what makes
+            Church Street Deli special, and we can&apos;t wait to share it with you.
           </p>
         </motion.div>
 
@@ -104,7 +104,7 @@ export function Testimonials() {
                     <div>
                       <p className="font-medium">{testimonial.name}</p>
                       <p className="text-xs text-muted-foreground">
-                        Verified Customer
+                        Feb 18, 2026
                       </p>
                     </div>
                   </div>
