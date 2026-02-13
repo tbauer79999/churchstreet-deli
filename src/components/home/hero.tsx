@@ -68,7 +68,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-primary" />
-                <span>Mon-Sat: 8AM - 7PM</span>
+                <span>Mon thru Sat 8am - 7pm</span>
               </div>
             </div>
           </motion.div>

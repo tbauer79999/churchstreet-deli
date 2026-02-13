@@ -139,9 +139,9 @@ export default function AboutPage() {
                 </div>
                 <div className="rounded-xl bg-background p-4 text-center shadow-warm">
                   <p className="font-serif text-2xl font-bold text-primary">
-                    Mon-Sat
+                    Mon thru Sat
                   </p>
-                  <p className="text-xs text-muted-foreground">8AM-7PM</p>
+                  <p className="text-xs text-muted-foreground">8am - 7pm</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -367,11 +367,9 @@ export default function AboutPage() {
                   <div>
                     <p className="font-semibold">Hours</p>
                     <p className="text-muted-foreground">
-                      Monday - Saturday
+                      Mon thru Sat 8am - 7pm
                       <br />
-                      8:00 AM - 7:00 PM
-                      <br />
-                      Sunday: Closed
+                      Closed on Sundays
                     </p>
                   </div>
                 </div>
