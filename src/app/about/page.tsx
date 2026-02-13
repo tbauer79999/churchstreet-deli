@@ -85,10 +85,13 @@ export default function AboutPage() {
                 believe that a sandwich isn&apos;t just a meal - it&apos;s an experience
                 that brings people together.
               </p>
-              <p className="text-muted-foreground">
+              <p className="mb-6 text-muted-foreground">
                 Located in the heart of Cleveland, Tennessee, we&apos;re proud to
                 serve our neighbors with handcrafted sandwiches, fresh salads,
                 homemade soups, and warm hospitality that keeps you coming back.
+              </p>
+              <p className="text-lg font-medium text-primary">
+                We are excited to be a part of Downtown Cleveland! Please let us know what you would like to see on our menu next!
               </p>
             </motion.div>
 
@@ -190,6 +193,84 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Weekly Specials & Coming Soon */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 text-center"
+          >
+            <span className="mb-2 inline-block font-medium text-primary">
+              What&apos;s New
+            </span>
+            <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl">
+              Exciting Things Ahead!
+            </h2>
+          </motion.div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Card className="h-full">
+                <CardContent className="p-6">
+                  <div className="mb-4 text-4xl">🎁</div>
+                  <h3 className="mb-2 font-serif text-xl font-semibold">
+                    Gift Cards Coming Soon!
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Share the love with friends and family. Our gift cards will be available soon!
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Card className="h-full">
+                <CardContent className="p-6">
+                  <div className="mb-4 text-4xl">⭐</div>
+                  <h3 className="mb-2 font-serif text-xl font-semibold">
+                    Loyalty Program Coming Soon!
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Earn points and discounts with every visit. Our loyalty program launches soon!
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <Card className="h-full bg-primary/5">
+                <CardContent className="p-6">
+                  <div className="mb-4 text-4xl">🍽️</div>
+                  <h3 className="mb-2 font-serif text-xl font-semibold">
+                    Weekly Specials
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    We offer weekly specials to take home after a long day. Swing by on your way home to pick up a meal for you and yours!
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Timeline Section */}
       <section className="bg-muted/30 py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -281,11 +362,11 @@ export default function AboutPage() {
                   <div>
                     <p className="font-semibold">Hours</p>
                     <p className="text-muted-foreground">
-                      Mon-Fri: 7AM - 7PM
+                      Monday - Saturday
                       <br />
-                      Sat: 8AM - 6PM
+                      8:00 AM - 7:00 PM
                       <br />
-                      Sun: 9AM - 4PM
+                      Sunday: Closed
                     </p>
                   </div>
                 </div>

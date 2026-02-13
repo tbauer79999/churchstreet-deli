@@ -31,9 +31,8 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const hours = [
-  { day: "Monday - Friday", time: "7:00 AM - 7:00 PM" },
-  { day: "Saturday", time: "8:00 AM - 6:00 PM" },
-  { day: "Sunday", time: "9:00 AM - 4:00 PM" },
+  { day: "Monday - Saturday", time: "8:00 AM - 7:00 PM" },
+  { day: "Sunday", time: "Closed" },
 ];
 
 const contactInfo = [
@@ -46,8 +45,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    content: "(423) 555-1234",
-    link: "tel:+14235551234",
+    content: "423-464-5144",
+    link: "tel:+14234645144",
   },
   {
     icon: Mail,

@@ -27,7 +27,7 @@ const itemVariants = {
 };
 
 export default function MenuPage() {
-  const [activeCategory, setActiveCategory] = useState<Category>("sandwiches");
+  const [activeCategory, setActiveCategory] = useState<Category>("breakfast");
   const items = getItemsByCategory(activeCategory);
 
   const currentCategory = categories.find((c) => c.id === activeCategory);
