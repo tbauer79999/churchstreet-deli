@@ -1,13 +1,9 @@
 export type Category =
-  | "breakfast"
-  | "traditional-favorites"
   | "signature-sandwiches"
-  | "house-specials"
-  | "hot-dogs"
   | "soups-chili"
-  | "salads"
+  | "hot-dogs"
   | "beverages"
-  | "desserts";
+  | "chips";
 
 export interface MenuItem {
   id: string;
@@ -21,112 +17,7 @@ export interface MenuItem {
   isGlutenFree?: boolean;
 }
 
-export const categories: { id: Category; name: string; description: string }[] = [
-  {
-    id: "breakfast",
-    name: "Breakfast Biscuits & Wraps",
-    description: "Start your day right with our hearty breakfast options",
-  },
-  {
-    id: "traditional-favorites",
-    name: "Traditional Favorites",
-    description: "Classic sandwiches and burgers that never go out of style",
-  },
-  {
-    id: "signature-sandwiches",
-    name: "Signature Sandwiches",
-    description: "All sandwiches come with lettuce, tomato & a pickle spear. Prices include chips and a tea, coffee, or canned soft drink.",
-  },
-  {
-    id: "house-specials",
-    name: "House Specials",
-    description: "Our unique creations you won't find anywhere else",
-  },
-  {
-    id: "hot-dogs",
-    name: "Hot Dogs",
-    description: "Premium Angus beef hot dogs with your choice of toppings",
-  },
-  {
-    id: "soups-chili",
-    name: "Soup & Chili",
-    description: "Homemade soups and chili, made fresh daily",
-  },
-  {
-    id: "salads",
-    name: "Fresh Salads",
-    description: "Crisp, fresh salads made to order",
-  },
-  {
-    id: "beverages",
-    name: "Beverages",
-    description: "Refreshing drinks to complete your meal",
-  },
-  {
-    id: "desserts",
-    name: "Pastries & Desserts",
-    description: "Sweet treats to finish your meal",
-  },
-];
-
 export const menuItems: MenuItem[] = [
-  // Breakfast Biscuits & Wraps
-  {
-    id: "egg-cheese",
-    name: "Egg & Cheese",
-    description: "Fresh eggs and melted cheese on your choice of biscuit or wrap",
-    price: 3.00,
-    category: "breakfast",
-  },
-  {
-    id: "sausage-egg",
-    name: "Sausage & Egg",
-    description: "Savory sausage with fresh eggs on your choice of biscuit or wrap",
-    price: 4.00,
-    category: "breakfast",
-  },
-  {
-    id: "sausage-egg-cheese",
-    name: "Sausage, Egg & Cheese",
-    description: "Classic breakfast combo with sausage, eggs, and cheese",
-    price: 5.00,
-    category: "breakfast",
-    isPopular: true,
-  },
-  {
-    id: "steak-egg",
-    name: "Steak & Egg",
-    description: "Tender steak with fresh eggs on your choice of biscuit or wrap",
-    price: 6.00,
-    category: "breakfast",
-  },
-  {
-    id: "steak-egg-cheese",
-    name: "Steak, Egg & Cheese",
-    description: "Premium steak, eggs, and cheese for a hearty breakfast",
-    price: 7.00,
-    category: "breakfast",
-    isPopular: true,
-  },
-
-  // Traditional Favorites
-  {
-    id: "chicken-sandwich",
-    name: "Chicken Sandwich",
-    description: "Breaded chicken breast with lettuce, tomato & mayo",
-    price: 10.00,
-    category: "traditional-favorites",
-    isPopular: true,
-  },
-  {
-    id: "hamburger",
-    name: "Hamburger",
-    description: "Beef patty with lettuce, tomato, pickle & mayo",
-    price: 10.00,
-    category: "traditional-favorites",
-    isPopular: true,
-  },
-
   // Signature Sandwiches
   {
     id: "italian",
@@ -175,25 +66,6 @@ export const menuItems: MenuItem[] = [
     isVegetarian: true,
   },
 
-  // House Specials
-  {
-    id: "cheese-turnover",
-    name: "Cheese Turnover",
-    description: "Served with marinara",
-    price: 6.00,
-    category: "house-specials",
-    isVegetarian: true,
-  },
-
-  // Hot Dogs
-  {
-    id: "angus-beef-dog",
-    name: "Angus Beef Dog",
-    description: "Premium Angus beef hot dog",
-    price: 7.00,
-    category: "hot-dogs",
-  },
-
   // Soup & Chili
   {
     id: "chicken-noodle-soup",
@@ -212,15 +84,13 @@ export const menuItems: MenuItem[] = [
     isGlutenFree: true,
   },
 
-  // Salads
+  // Hot Dogs
   {
-    id: "house-garden-salad",
-    name: "House Garden Salad",
-    description: "Mixed greens, cucumbers, tomatoes, & shredded cheese. Dressings: Ranch, Italian, Thousand Island, Greek",
-    price: 8.00,
-    category: "salads",
-    isVegetarian: true,
-    isGlutenFree: true,
+    id: "angus-beef-dog",
+    name: "Angus Beef Dog",
+    description: "Premium Angus beef hot dog. Ask about other toppings.",
+    price: 7.00,
+    category: "hot-dogs",
   },
 
   // Beverages
@@ -237,7 +107,7 @@ export const menuItems: MenuItem[] = [
     id: "iced-tea",
     name: "Iced Tea",
     description: "Freshly brewed iced tea",
-    price: 1.00,
+    price: 1.50,
     category: "beverages",
     isVegetarian: true,
     isGlutenFree: true,
@@ -246,7 +116,7 @@ export const menuItems: MenuItem[] = [
     id: "canned-soda",
     name: "Canned Soda",
     description: "Your choice of canned soda",
-    price: 1.00,
+    price: 1.50,
     category: "beverages",
     isVegetarian: true,
     isGlutenFree: true,
@@ -255,19 +125,21 @@ export const menuItems: MenuItem[] = [
     id: "bottled-water",
     name: "Bottled Water",
     description: "Refreshing bottled water",
-    price: 1.00,
+    price: 1.50,
     category: "beverages",
     isVegetarian: true,
     isGlutenFree: true,
   },
 
-  // Desserts
+  // Chips
   {
-    id: "pastries-desserts",
-    name: "Pastries and Desserts",
-    description: "Coming Soon!",
-    price: 0.00,
-    category: "desserts",
+    id: "chips",
+    name: "Chips (all types)",
+    description: "Your choice of chips",
+    price: 1.50,
+    category: "chips",
+    isVegetarian: true,
+    isGlutenFree: true,
   },
 ];
 

@@ -1,36 +1,76 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { MenuItemCard } from "@/components/menu/menu-item-card";
-import { categories, getItemsByCategory, Category } from "@/lib/menu-data";
+import { getItemsByCategory, formatPrice } from "@/lib/menu-data";
+import { Badge } from "@/components/ui/badge";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.3 },
-  },
-};
+function MenuSection({
+  title,
+  subtitle,
+  items,
+  delay = 0,
+}: {
+  title: string;
+  subtitle?: string;
+  items: ReturnType<typeof getItemsByCategory>;
+  delay?: number;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      className="mb-8"
+    >
+      <h2 className="mb-1 border-b-2 border-primary pb-2 font-serif text-2xl font-bold text-foreground">
+        {title}
+      </h2>
+      {subtitle && (
+        <p className="mb-3 text-sm font-medium text-primary">{subtitle}</p>
+      )}
+      <ul className="divide-y divide-border">
+        {items.map((item) => (
+          <li key={item.id} className="flex items-start justify-between gap-4 py-3">
+            <div className="flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-semibold">{item.name}</span>
+                {item.isPopular && (
+                  <Badge className="bg-primary/90 text-xs">Popular</Badge>
+                )}
+                {item.isVegetarian && (
+                  <Badge variant="secondary" className="bg-green-100 text-xs text-green-700">
+                    Vegetarian
+                  </Badge>
+                )}
+                {item.isGlutenFree && (
+                  <Badge variant="secondary" className="bg-amber-100 text-xs text-amber-700">
+                    GF
+                  </Badge>
+                )}
+              </div>
+              {item.description && (
+                <p className="mt-0.5 text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+              )}
+            </div>
+            <span className="whitespace-nowrap font-bold text-primary">
+              {formatPrice(item.price)}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  );
+}
 
 export default function MenuPage() {
-  const [activeCategory, setActiveCategory] = useState<Category>("breakfast");
-  const items = getItemsByCategory(activeCategory);
-
-  const currentCategory = categories.find((c) => c.id === activeCategory);
+  const sandwiches = getItemsByCategory("signature-sandwiches");
+  const soups = getItemsByCategory("soups-chili");
+  const hotDogs = getItemsByCategory("hot-dogs");
+  const beverages = getItemsByCategory("beverages");
+  const chips = getItemsByCategory("chips");
 
   return (
     <div className="min-h-screen">
@@ -46,94 +86,61 @@ export default function MenuPage() {
               Our Menu
             </h1>
             <p className="mx-auto max-w-2xl text-muted-foreground">
-              Explore our selection of handcrafted sandwiches, subs, fresh salads,
-              hearty soups, and more. Everything is made fresh daily with quality
-              ingredients.
+              Everything made fresh daily with quality ingredients.
+              All sandwiches come with lettuce, tomato & a pickle spear.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Menu Content */}
+      {/* Menu Content - 2 Column Layout */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          {/* Category Tabs */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mb-8"
-          >
-            <Tabs
-              value={activeCategory}
-              onValueChange={(value) => setActiveCategory(value as Category)}
-              className="w-full"
-            >
-              <TabsList className="flex h-auto w-full flex-wrap justify-start gap-2 bg-transparent p-0">
-                {categories.map((category) => (
-                  <TabsTrigger
-                    key={category.id}
-                    value={category.id}
-                    className="rounded-full border border-border bg-background px-4 py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-                  >
-                    {category.name}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
-          </motion.div>
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
 
-          {/* Category Description */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCategory}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="mb-8"
-            >
-              <h2 className="mb-2 font-serif text-2xl font-bold">
-                {currentCategory?.name}
-              </h2>
-              <p className="text-muted-foreground">
-                {currentCategory?.description}
-              </p>
-            </motion.div>
-          </AnimatePresence>
+            {/* Left Column: Signature Sandwiches */}
+            <div>
+              <MenuSection
+                title="Signature Sandwiches"
+                subtitle="Make it a combo for $2 more (chips & drink)"
+                items={sandwiches}
+                delay={0.1}
+              />
+            </div>
 
-          {/* Items Grid */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCategory}
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-            >
-              {items.map((item) => (
-                <motion.div key={item.id} variants={itemVariants}>
-                  <MenuItemCard item={item} />
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+            {/* Right Column: Soup & Chili, Hot Dogs, Beverages, Chips */}
+            <div>
+              <MenuSection
+                title="Soup & Chili"
+                items={soups}
+                delay={0.2}
+              />
+              <MenuSection
+                title="Hot Dogs"
+                items={hotDogs}
+                delay={0.3}
+              />
+              <MenuSection
+                title="Beverages"
+                items={beverages}
+                delay={0.4}
+              />
+              <MenuSection
+                title="Chips"
+                items={chips}
+                delay={0.5}
+              />
+            </div>
+          </div>
 
-          {/* Dietary Note */}
+          {/* Footer Note */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-12 rounded-lg bg-muted/50 p-6 text-center"
+            transition={{ delay: 0.6 }}
+            className="mt-8 rounded-lg bg-primary/10 p-6 text-center"
           >
-            <h3 className="mb-2 font-semibold">Dietary Information</h3>
-            <p className="text-sm text-muted-foreground">
-              Items marked with <span className="text-green-600">Vegetarian</span>{" "}
-              contain no meat. Items marked with{" "}
-              <span className="text-amber-600">GF</span> are gluten-free or can be
-              made gluten-free upon request. Please inform us of any allergies.
-            </p>
+            <p className="font-semibold text-primary">🎁 Gift cards coming soon!</p>
           </motion.div>
         </div>
       </section>

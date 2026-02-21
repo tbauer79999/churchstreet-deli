@@ -69,15 +69,11 @@ export function FeaturedItems() {
                   {/* Image Placeholder */}
                   <div className="relative aspect-[4/3] bg-gradient-to-br from-muted to-muted/50">
                     <div className="flex h-full items-center justify-center text-6xl">
-                      {item.category === "breakfast" && "🍳"}
-                      {item.category === "traditional-favorites" && "🍔"}
                       {item.category === "signature-sandwiches" && "🥪"}
-                      {item.category === "house-specials" && "⭐"}
                       {item.category === "hot-dogs" && "🌭"}
                       {item.category === "soups-chili" && "🍲"}
-                      {item.category === "salads" && "🥗"}
                       {item.category === "beverages" && "🥤"}
-                      {item.category === "desserts" && "🍰"}
+                      {item.category === "chips" && "🍟"}
                     </div>
 
                     {/* Popular Badge */}
