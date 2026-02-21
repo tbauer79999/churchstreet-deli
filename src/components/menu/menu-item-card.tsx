@@ -1,11 +1,7 @@
 "use client";
 
-import { Plus } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useCart } from "@/lib/cart-context";
 import { MenuItem, formatPrice } from "@/lib/menu-data";
 
 interface MenuItemCardProps {
@@ -13,17 +9,18 @@ interface MenuItemCardProps {
 }
 
 const categoryEmojis: Record<string, string> = {
-  sandwiches: "🥪",
-  subs: "🥖",
+  breakfast: "🍳",
+  "traditional-favorites": "🍔",
+  "signature-sandwiches": "🥪",
+  "house-specials": "⭐",
+  "hot-dogs": "🌭",
+  "soups-chili": "🍲",
   salads: "🥗",
-  soups: "🍲",
-  sides: "🍟",
-  drinks: "🥤",
+  beverages: "🥤",
+  desserts: "🍰",
 };
 
 export function MenuItemCard({ item }: MenuItemCardProps) {
-  const { addItem } = useCart();
-
   return (
     <Card className="group overflow-hidden transition-all duration-300 hover:shadow-warm">
       <CardContent className="p-0">
@@ -49,15 +46,6 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
               </Badge>
             )}
           </div>
-
-          {/* Quick Add Button */}
-          <Button
-            size="icon"
-            className="absolute bottom-3 right-3 h-10 w-10 rounded-full opacity-0 shadow-lg transition-all duration-300 group-hover:opacity-100"
-            onClick={() => addItem(item)}
-          >
-            <Plus className="h-5 w-5" />
-          </Button>
         </div>
 
         {/* Content */}
@@ -70,17 +58,9 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
               {formatPrice(item.price)}
             </span>
           </div>
-          <p className="mb-4 text-sm text-muted-foreground line-clamp-2">
+          <p className="text-sm text-muted-foreground line-clamp-2">
             {item.description}
           </p>
-          <Button
-            variant="outline"
-            className="w-full"
-            onClick={() => addItem(item)}
-          >
-            <Plus className="mr-2 h-4 w-4" />
-            Add to Order
-          </Button>
         </div>
       </CardContent>
     </Card>

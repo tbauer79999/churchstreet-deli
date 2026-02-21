@@ -3,26 +3,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, ShoppingBag, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-import { useCart } from "@/lib/cart-context";
 import { cn } from "@/lib/utils";
-import { CartSheet } from "@/components/order/cart-sheet";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
-  { href: "/order", label: "Order Online" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
   const pathname = usePathname();
-  const { totalItems, toggleCart } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -58,33 +54,8 @@ export function Header() {
           ))}
         </div>
 
-        {/* Cart & Mobile Menu */}
+        {/* Mobile Menu Button */}
         <div className="flex items-center gap-2">
-          {/* Cart Button */}
-          <Button
-            variant="outline"
-            size="icon"
-            className="relative"
-            onClick={toggleCart}
-            aria-label="Open cart"
-          >
-            <ShoppingBag className="h-5 w-5" />
-            {totalItems > 0 && (
-              <motion.span
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground"
-              >
-                {totalItems}
-              </motion.span>
-            )}
-          </Button>
-
-          {/* Order Now CTA (Desktop) */}
-          <Button asChild className="hidden md:inline-flex">
-            <Link href="/order">Order Now</Link>
-          </Button>
-
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
@@ -127,18 +98,10 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Button asChild className="mt-2 w-full">
-                <Link href="/order" onClick={() => setMobileMenuOpen(false)}>
-                  Order Now
-                </Link>
-              </Button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Cart Sheet */}
-      <CartSheet />
     </header>
   );
 }

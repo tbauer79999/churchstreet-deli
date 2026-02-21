@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Plus, Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useCart } from "@/lib/cart-context";
 import { getPopularItems, formatPrice } from "@/lib/menu-data";
 
 const containerVariants = {
@@ -30,7 +29,6 @@ const itemVariants = {
 };
 
 export function FeaturedItems() {
-  const { addItem } = useCart();
   const popularItems = getPopularItems().slice(0, 4);
 
   return (
@@ -88,14 +86,6 @@ export function FeaturedItems() {
                       Popular
                     </Badge>
 
-                    {/* Quick Add Button */}
-                    <Button
-                      size="icon"
-                      className="absolute bottom-3 right-3 h-10 w-10 rounded-full opacity-0 shadow-lg transition-all duration-300 group-hover:opacity-100"
-                      onClick={() => addItem(item)}
-                    >
-                      <Plus className="h-5 w-5" />
-                    </Button>
                   </div>
 
                   {/* Content */}
@@ -108,17 +98,9 @@ export function FeaturedItems() {
                         {formatPrice(item.price)}
                       </span>
                     </div>
-                    <p className="mb-3 line-clamp-2 text-sm text-muted-foreground">
+                    <p className="line-clamp-2 text-sm text-muted-foreground">
                       {item.description}
                     </p>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full"
-                      onClick={() => addItem(item)}
-                    >
-                      Add to Order
-                    </Button>
                   </div>
                 </CardContent>
               </Card>

@@ -18,11 +18,11 @@ export function CTASection() {
           className="text-center"
         >
           <h2 className="mb-4 font-serif text-3xl font-bold text-primary-foreground md:text-4xl">
-            Ready to Taste the Difference?
+            Join Us for Our Grand Opening!
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-primary-foreground/80">
-            Order online for quick pickup or give us a call. We can&apos;t wait to
-            serve you the best deli experience in Cleveland!
+            Opening February 18th at 191 Church Street NE, Cleveland TN. Come in and
+            see us — we can&apos;t wait to serve you!
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Button
@@ -31,8 +31,8 @@ export function CTASection() {
               variant="secondary"
               className="text-base"
             >
-              <Link href="/order">
-                Order Online Now
+              <Link href="/menu">
+                View Our Menu
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

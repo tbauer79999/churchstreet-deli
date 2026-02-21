@@ -50,13 +50,13 @@ export function Hero() {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <Button asChild size="lg" className="text-base">
-                <Link href="/order">
-                  Order Online
+                <Link href="/menu">
+                  View Our Menu
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-base">
-                <Link href="/menu">View Full Menu</Link>
+                <Link href="/contact">Find Us</Link>
               </Button>
             </div>
 
@@ -68,7 +68,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-primary" />
-                <span>Mon thru Sat 8am - 7pm</span>
+                <span>Mon - Sat 11am - 6pm</span>
               </div>
             </div>
           </motion.div>

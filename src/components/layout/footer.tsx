@@ -3,14 +3,12 @@ import Image from "next/image";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
 const hours = [
-  { day: "Monday - Friday", time: "7:00 AM - 7:00 PM" },
-  { day: "Saturday", time: "8:00 AM - 6:00 PM" },
-  { day: "Sunday", time: "9:00 AM - 4:00 PM" },
+  { day: "Mon - Sat", time: "11am - 6pm" },
+  { day: "Closed on Sundays", time: "" },
 ];
 
 const quickLinks = [
   { href: "/menu", label: "Menu" },
-  { href: "/order", label: "Order Online" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
 ];
@@ -32,8 +30,8 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-muted-foreground">
-              Serving fresh, delicious sandwiches, subs, and salads in the heart
-              of Cleveland, TN since 2024. Made with love, served with a smile.
+              Fresh, delicious sandwiches, salads, and homemade soups in the heart
+              of Downtown Cleveland, TN. Opening Feb 18th!
             </p>
           </div>
 

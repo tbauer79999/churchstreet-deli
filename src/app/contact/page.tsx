@@ -31,7 +31,7 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const hours = [
-  { day: "Mon thru Sat", time: "8am - 7pm" },
+  { day: "Mon - Sat", time: "11am - 6pm" },
   { day: "Closed on Sundays", time: "" },
 ];
 
