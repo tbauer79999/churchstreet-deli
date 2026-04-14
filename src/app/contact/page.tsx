@@ -253,7 +253,7 @@ export default function ContactPage() {
                           <Input
                             id="phone"
                             type="tel"
-                            placeholder="(423) 555-1234"
+                            placeholder="(423) 464-5144"
                             {...register("phone")}
                           />
                         </div>
