@@ -367,7 +367,7 @@ export default function AboutPage() {
                   <div>
                     <p className="font-semibold">Hours</p>
                     <p className="text-muted-foreground">
-                      Mon - Sat 11am - 6pm
+                      Mon - Sat 11am - 4pm
                       <br />
                       Closed on Sundays
                     </p>

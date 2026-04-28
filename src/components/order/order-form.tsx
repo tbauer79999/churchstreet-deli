@@ -46,8 +46,8 @@ const generatePickupTimes = () => {
     startMinute = startMinute - 60;
   }
 
-  // Generate times from start until 7 PM (19:00)
-  for (let hour = startHour; hour < 19; hour++) {
+  // Generate times from start until 4 PM (16:00)
+  for (let hour = startHour; hour < 16; hour++) {
     for (let minute = hour === startHour ? startMinute : 0; minute < 60; minute += 15) {
       const time = new Date();
       time.setHours(hour, minute, 0, 0);
