@@ -71,6 +71,8 @@ export default function MenuPage() {
   const hotDogs = getItemsByCategory("hot-dogs");
   const beverages = getItemsByCategory("beverages");
   const chips = getItemsByCategory("chips");
+  const desserts = getItemsByCategory("desserts");
+  const bowls = getItemsByCategory("bowls");
 
   return (
     <div className="min-h-screen">
@@ -129,6 +131,16 @@ export default function MenuPage() {
                 title="Chips"
                 items={chips}
                 delay={0.5}
+              />
+              <MenuSection
+                title="Desserts"
+                items={desserts}
+                delay={0.6}
+              />
+              <MenuSection
+                title="Bowls"
+                items={bowls}
+                delay={0.7}
               />
             </div>
           </div>

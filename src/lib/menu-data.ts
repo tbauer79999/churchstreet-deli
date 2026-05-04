@@ -3,7 +3,9 @@ export type Category =
   | "soups-chili"
   | "hot-dogs"
   | "beverages"
-  | "chips";
+  | "chips"
+  | "desserts"
+  | "bowls";
 
 export interface MenuItem {
   id: string;
@@ -39,14 +41,14 @@ export const menuItems: MenuItem[] = [
     id: "blt",
     name: "BLT",
     description: "Bacon, lettuce, tomato & mayo",
-    price: 9.00,
+    price: 10.00,
     category: "signature-sandwiches",
   },
   {
     id: "chicken-salad-sandwich",
     name: "Chicken Salad Sandwich",
-    description: "Made from scratch chicken salad",
-    price: 9.00,
+    description: "Made from scratch",
+    price: 10.00,
     category: "signature-sandwiches",
   },
   {
@@ -64,6 +66,35 @@ export const menuItems: MenuItem[] = [
     price: 11.00,
     category: "signature-sandwiches",
     isVegetarian: true,
+  },
+  {
+    id: "meatball-sandwich",
+    name: "Meatball Sandwich",
+    description: "Hearty meatballs with marinara",
+    price: 13.00,
+    category: "signature-sandwiches",
+  },
+  {
+    id: "pimento-cheese-sandwich",
+    name: "Pimento Cheese Sandwich",
+    description: "House-made pimento cheese",
+    price: 9.00,
+    category: "signature-sandwiches",
+    isVegetarian: true,
+  },
+  {
+    id: "tuna-salad-sandwich",
+    name: "Tuna Salad Sandwich",
+    description: "Made from scratch tuna salad",
+    price: 12.00,
+    category: "signature-sandwiches",
+  },
+  {
+    id: "blackened-chicken-sandwich",
+    name: "Blackened Chicken Sandwich",
+    description: "Seasoned blackened chicken breast",
+    price: 12.00,
+    category: "signature-sandwiches",
   },
 
   // Soup & Chili
@@ -90,6 +121,13 @@ export const menuItems: MenuItem[] = [
     name: "Angus Beef Dog",
     description: "Premium Angus beef hot dog. Ask about other toppings.",
     price: 7.00,
+    category: "hot-dogs",
+  },
+  {
+    id: "hot-dog-toppings",
+    name: "Add Chili, Cheese & Onion",
+    description: "Loaded topping combo for any hot dog",
+    price: 2.00,
     category: "hot-dogs",
   },
 
@@ -140,6 +178,148 @@ export const menuItems: MenuItem[] = [
     category: "chips",
     isVegetarian: true,
     isGlutenFree: true,
+  },
+
+  // Desserts
+  {
+    id: "banana-pudding-cups",
+    name: "Banana Pudding Cups",
+    description: "Creamy homemade banana pudding",
+    price: 3.00,
+    category: "desserts",
+    isVegetarian: true,
+  },
+  {
+    id: "cookies",
+    name: "Cookies",
+    description: "Freshly baked cookies",
+    price: 1.00,
+    category: "desserts",
+    isVegetarian: true,
+  },
+  {
+    id: "brownies",
+    name: "Brownies",
+    description: "Rich chocolate brownies (when available)",
+    price: 1.00,
+    category: "desserts",
+    isVegetarian: true,
+  },
+
+  // Bowls — each size is its own item so the cart can price them individually
+  {
+    id: "chicken-salad-bowl-small",
+    name: "Chicken Salad Bowl (Small)",
+    description: "Made from scratch chicken salad",
+    price: 6.00,
+    category: "bowls",
+  },
+  {
+    id: "chicken-salad-bowl-medium",
+    name: "Chicken Salad Bowl (Medium)",
+    description: "Made from scratch chicken salad",
+    price: 9.00,
+    category: "bowls",
+  },
+  {
+    id: "chicken-salad-bowl-large",
+    name: "Chicken Salad Bowl (Large)",
+    description: "Made from scratch chicken salad",
+    price: 12.00,
+    category: "bowls",
+  },
+  {
+    id: "potato-salad-bowl-small",
+    name: "Potato Salad Bowl (Small)",
+    description: "House-made potato salad",
+    price: 3.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "potato-salad-bowl-medium",
+    name: "Potato Salad Bowl (Medium)",
+    description: "House-made potato salad",
+    price: 6.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "potato-salad-bowl-large",
+    name: "Potato Salad Bowl (Large)",
+    description: "House-made potato salad",
+    price: 9.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "pimento-cheese-bowl-small",
+    name: "Pimento Cheese Bowl (Small)",
+    description: "House-made pimento cheese",
+    price: 6.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "pimento-cheese-bowl-medium",
+    name: "Pimento Cheese Bowl (Medium)",
+    description: "House-made pimento cheese",
+    price: 9.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "pimento-cheese-bowl-large",
+    name: "Pimento Cheese Bowl (Large)",
+    description: "House-made pimento cheese",
+    price: 12.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "hot-slaw-bowl-small",
+    name: "Hot Slaw Bowl (Small)",
+    description: "Warm, tangy slaw",
+    price: 6.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "hot-slaw-bowl-medium",
+    name: "Hot Slaw Bowl (Medium)",
+    description: "Warm, tangy slaw",
+    price: 9.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "hot-slaw-bowl-large",
+    name: "Hot Slaw Bowl (Large)",
+    description: "Warm, tangy slaw",
+    price: 12.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "tuna-salad-bowl-small",
+    name: "Tuna Salad Bowl (Small)",
+    description: "Made from scratch tuna salad",
+    price: 8.00,
+    category: "bowls",
+  },
+  {
+    id: "tuna-salad-bowl-medium",
+    name: "Tuna Salad Bowl (Medium)",
+    description: "Made from scratch tuna salad",
+    price: 10.00,
+    category: "bowls",
+  },
+  {
+    id: "tuna-salad-bowl-large",
+    name: "Tuna Salad Bowl (Large)",
+    description: "Made from scratch tuna salad",
+    price: 12.00,
+    category: "bowls",
   },
 ];
 
