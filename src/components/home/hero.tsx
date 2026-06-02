@@ -29,10 +29,10 @@ export function Hero() {
             >
               <div className="inline-flex flex-col items-center gap-2 rounded-2xl bg-gradient-to-r from-primary to-primary/80 px-6 py-4 shadow-xl lg:items-start">
                 <span className="text-sm font-bold uppercase tracking-wider text-primary-foreground">
-                  🎉 Grand Opening
+                  🥪 Now Open
                 </span>
                 <span className="font-serif text-3xl font-bold text-primary-foreground md:text-4xl">
-                  February 18th!
+                  Church Street Deli
                 </span>
               </div>
             </motion.div>
@@ -43,9 +43,9 @@ export function Hero() {
             </h1>
 
             <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              Cleveland&apos;s newest neighborhood deli opens February 18th!
-              Handcrafted sandwiches, fresh salads, and homemade soups made with
-              the finest ingredients. Join us for our grand opening celebration!
+              Cleveland&apos;s neighborhood deli is now open! Handcrafted
+              sandwiches, fresh salads, and homemade soups made with the finest
+              ingredients. Stop by and taste the difference!
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
@@ -115,12 +115,12 @@ export function Hero() {
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-foreground/20">
-                  <span className="text-2xl">🎉</span>
+                  <span className="text-2xl">🥪</span>
                 </div>
                 <div>
-                  <p className="font-serif text-lg font-bold text-primary-foreground">Feb 18th</p>
+                  <p className="font-serif text-lg font-bold text-primary-foreground">Now Open</p>
                   <p className="text-xs text-primary-foreground/90">
-                    Grand Opening
+                    Mon - Sat
                   </p>
                 </div>
               </div>
