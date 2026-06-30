@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-import { getItemsByCategory, formatPrice } from "@/lib/menu-data";
+import { getItemsByCategory, formatItemPrice } from "@/lib/menu-data";
 import { Badge } from "@/components/ui/badge";
 
 function MenuSection({
@@ -56,7 +56,7 @@ function MenuSection({
               )}
             </div>
             <span className="whitespace-nowrap font-bold text-primary">
-              {formatPrice(item.price)}
+              {formatItemPrice(item)}
             </span>
           </li>
         ))}
@@ -70,7 +70,7 @@ export default function MenuPage() {
   const soups = getItemsByCategory("soups-chili");
   const hotDogs = getItemsByCategory("hot-dogs");
   const beverages = getItemsByCategory("beverages");
-  const chips = getItemsByCategory("chips");
+  const sidesExtras = getItemsByCategory("sides-extras");
   const desserts = getItemsByCategory("desserts");
   const bowls = getItemsByCategory("bowls");
 
@@ -104,7 +104,7 @@ export default function MenuPage() {
             <div>
               <MenuSection
                 title="Signature Sandwiches"
-                subtitle="Make it a combo for $2 more (chips & drink)"
+                subtitle="Make it a combo for $2 more (any side & drink)"
                 items={sandwiches}
                 delay={0.1}
               />
@@ -114,6 +114,7 @@ export default function MenuPage() {
             <div>
               <MenuSection
                 title="Soup & Chili"
+                subtitle="Please note: our soup offerings are seasonal."
                 items={soups}
                 delay={0.2}
               />
@@ -128,8 +129,8 @@ export default function MenuPage() {
                 delay={0.4}
               />
               <MenuSection
-                title="Chips"
-                items={chips}
+                title="Sides & Extras"
+                items={sidesExtras}
                 delay={0.5}
               />
               <MenuSection
@@ -138,7 +139,8 @@ export default function MenuPage() {
                 delay={0.6}
               />
               <MenuSection
-                title="Bowls"
+                title="Deli Bowls"
+                subtitle="A hearty scoop of your favorite deli salads."
                 items={bowls}
                 delay={0.7}
               />

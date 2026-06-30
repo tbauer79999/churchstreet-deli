@@ -73,7 +73,7 @@ export function FeaturedItems() {
                       {item.category === "hot-dogs" && "🌭"}
                       {item.category === "soups-chili" && "🍲"}
                       {item.category === "beverages" && "🥤"}
-                      {item.category === "chips" && "🍟"}
+                      {item.category === "sides-extras" && "🍟"}
                     </div>
 
                     {/* Popular Badge */}

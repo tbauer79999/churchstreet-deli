@@ -19,7 +19,7 @@ const categoryEmojis: Record<string, string> = {
   beverages: "🥤",
   desserts: "🍰",
   bowls: "🥗",
-  chips: "🍟",
+  "sides-extras": "🍟",
 };
 
 export function MenuItemCard({ item }: MenuItemCardProps) {

@@ -3,7 +3,7 @@ export type Category =
   | "soups-chili"
   | "hot-dogs"
   | "beverages"
-  | "chips"
+  | "sides-extras"
   | "desserts"
   | "bowls";
 
@@ -12,6 +12,8 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
+  /** Upper bound for items priced as a range (e.g. Cheesecake $4 - $5). */
+  priceMax?: number;
   category: Category;
   image?: string;
   isPopular?: boolean;
@@ -32,7 +34,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "deli-club",
     name: "The Deli Club",
-    description: "Turkey, ham, bacon, cheddar & mayo",
+    description: "Turkey, ham, bacon, cheddar & mayo — Make it spicy!",
     price: 12.00,
     category: "signature-sandwiches",
     isPopular: true,
@@ -46,66 +48,66 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "chicken-salad-sandwich",
-    name: "Chicken Salad Sandwich",
+    name: "Chicken Salad",
     description: "Made from scratch",
     price: 10.00,
     category: "signature-sandwiches",
   },
   {
+    id: "egg-salad-sandwich",
+    name: "Egg Salad",
+    description: "Made from scratch",
+    price: 10.00,
+    category: "signature-sandwiches",
+  },
+  {
+    id: "tuna-salad-sandwich",
+    name: "Tuna Salad",
+    description: "Made from scratch",
+    price: 12.00,
+    category: "signature-sandwiches",
+  },
+  {
+    id: "pimento-cheese-sandwich",
+    name: "Siss's Pimento Cheese",
+    description: "Hand-shredded in house",
+    price: 10.00,
+    category: "signature-sandwiches",
+    isVegetarian: true,
+  },
+  {
+    id: "kentucky-derby",
+    name: "Kentucky Derby",
+    description: "Siss's Pimento Cheese, Bacon with Bourbon BBQ",
+    price: 13.00,
+    category: "signature-sandwiches",
+  },
+  {
     id: "steak-cheese",
     name: "Steak and Cheese",
-    description: "Ribeye steak with provolone",
+    description: "Ribeye steak with provolone — Make it spicy!",
     price: 13.00,
     category: "signature-sandwiches",
     isPopular: true,
   },
   {
+    id: "blackened-chicken-sandwich",
+    name: "Robert's Blacken Chicken",
+    description:
+      "Cooked on a black stone flat-top — Make it a Lorenzo by adding Siss's Pimento Cheese for $2 more!",
+    price: 12.00,
+    category: "signature-sandwiches",
+  },
+  {
     id: "roasted-veggie",
     name: "Roasted Veggie",
-    description: "Seasonal roasted veggies, mayo & sub dressing",
+    description: "Seasonal roasted veggies, provolone, mayo & sub dressing",
     price: 11.00,
     category: "signature-sandwiches",
     isVegetarian: true,
   },
-  {
-    id: "meatball-sandwich",
-    name: "Meatball Sandwich",
-    description: "Hearty meatballs with marinara",
-    price: 13.00,
-    category: "signature-sandwiches",
-  },
-  {
-    id: "pimento-cheese-sandwich",
-    name: "Pimento Cheese Sandwich",
-    description: "House-made pimento cheese",
-    price: 9.00,
-    category: "signature-sandwiches",
-    isVegetarian: true,
-  },
-  {
-    id: "tuna-salad-sandwich",
-    name: "Tuna Salad Sandwich",
-    description: "Made from scratch tuna salad",
-    price: 12.00,
-    category: "signature-sandwiches",
-  },
-  {
-    id: "blackened-chicken-sandwich",
-    name: "Blackened Chicken Sandwich",
-    description: "Seasoned blackened chicken breast",
-    price: 12.00,
-    category: "signature-sandwiches",
-  },
 
   // Soup & Chili
-  {
-    id: "chicken-noodle-soup",
-    name: "Chicken Noodle Soup",
-    description: "Classic homestyle broth, chicken & vegetables",
-    price: 6.00,
-    category: "soups-chili",
-    isGlutenFree: true,
-  },
   {
     id: "house-chili",
     name: "House Chili",
@@ -119,41 +121,16 @@ export const menuItems: MenuItem[] = [
   {
     id: "angus-beef-dog",
     name: "Angus Beef Dog",
-    description: "Premium Angus beef hot dog. Ask about other toppings.",
+    description: "Add Chili, Cheese & Onion $2. Ask about other toppings.",
     price: 7.00,
-    category: "hot-dogs",
-  },
-  {
-    id: "hot-dog-toppings",
-    name: "Add Chili, Cheese & Onion",
-    description: "Loaded topping combo for any hot dog",
-    price: 2.00,
     category: "hot-dogs",
   },
 
   // Beverages
   {
-    id: "coffee",
-    name: "Fresh Brewed Coffee",
-    description: "Freshly brewed hot coffee",
-    price: 2.00,
-    category: "beverages",
-    isVegetarian: true,
-    isGlutenFree: true,
-  },
-  {
-    id: "iced-tea",
-    name: "Iced Tea",
-    description: "Freshly brewed iced tea",
-    price: 1.50,
-    category: "beverages",
-    isVegetarian: true,
-    isGlutenFree: true,
-  },
-  {
     id: "canned-soda",
-    name: "Canned Soda",
-    description: "Your choice of canned soda",
+    name: "Canned Sodas",
+    description: "Coke products",
     price: 1.50,
     category: "beverages",
     isVegetarian: true,
@@ -168,23 +145,68 @@ export const menuItems: MenuItem[] = [
     isVegetarian: true,
     isGlutenFree: true,
   },
+  {
+    id: "iced-tea",
+    name: "Iced Tea",
+    description: "Sweet and Unsweet",
+    price: 1.50,
+    category: "beverages",
+    isVegetarian: true,
+    isGlutenFree: true,
+  },
 
-  // Chips
+  // Sides & Extras
   {
     id: "chips",
-    name: "Chips (all types)",
-    description: "Your choice of chips",
+    name: "Better Made Chips",
+    description:
+      "Original, 4 flavors of BBQ, Salt & Vinegar, Sour Cream & Onion",
     price: 1.50,
-    category: "chips",
+    category: "sides-extras",
+    isVegetarian: true,
+  },
+  {
+    id: "side-salad",
+    name: "Side Salad",
+    description: "Potato, Pasta, or Macaroni",
+    price: 1.50,
+    category: "sides-extras",
+    isVegetarian: true,
+  },
+  {
+    id: "deviled-eggs",
+    name: "Deviled Eggs",
+    description: "Made from scratch — get a pack of 4 for $3",
+    price: 1.50,
+    category: "sides-extras",
     isVegetarian: true,
     isGlutenFree: true,
   },
 
   // Desserts
   {
-    id: "banana-pudding-cups",
-    name: "Banana Pudding Cups",
-    description: "Creamy homemade banana pudding",
+    id: "cheesecake",
+    name: "Cheesecake",
+    description: "Ask us about our current rotating specialty flavors!",
+    price: 4.00,
+    priceMax: 5.00,
+    category: "desserts",
+    isVegetarian: true,
+  },
+  {
+    id: "fruit-cups",
+    name: "Fruit Cups",
+    description: "A refreshing, classic mix of traditional fruit",
+    price: 4.00,
+    category: "desserts",
+    isVegetarian: true,
+    isGlutenFree: true,
+  },
+  {
+    id: "pudding-cups",
+    name: "Pudding Cups",
+    description:
+      "Featuring our staple Banana pudding alongside other rotating sweet flavors",
     price: 3.00,
     category: "desserts",
     isVegetarian: true,
@@ -192,15 +214,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "cookies",
     name: "Cookies",
-    description: "Freshly baked cookies",
-    price: 1.00,
-    category: "desserts",
-    isVegetarian: true,
-  },
-  {
-    id: "brownies",
-    name: "Brownies",
-    description: "Rich chocolate brownies (when available)",
+    description: "Freshly baked in-house daily!",
     price: 1.00,
     category: "desserts",
     isVegetarian: true,
@@ -229,73 +243,25 @@ export const menuItems: MenuItem[] = [
     category: "bowls",
   },
   {
-    id: "potato-salad-bowl-small",
-    name: "Potato Salad Bowl (Small)",
-    description: "House-made potato salad",
-    price: 3.00,
-    category: "bowls",
-    isVegetarian: true,
-  },
-  {
-    id: "potato-salad-bowl-medium",
-    name: "Potato Salad Bowl (Medium)",
-    description: "House-made potato salad",
+    id: "egg-salad-bowl-small",
+    name: "Egg Salad Bowl (Small)",
+    description: "Made from scratch egg salad",
     price: 6.00,
     category: "bowls",
     isVegetarian: true,
   },
   {
-    id: "potato-salad-bowl-large",
-    name: "Potato Salad Bowl (Large)",
-    description: "House-made potato salad",
+    id: "egg-salad-bowl-medium",
+    name: "Egg Salad Bowl (Medium)",
+    description: "Made from scratch egg salad",
     price: 9.00,
     category: "bowls",
     isVegetarian: true,
   },
   {
-    id: "pimento-cheese-bowl-small",
-    name: "Pimento Cheese Bowl (Small)",
-    description: "House-made pimento cheese",
-    price: 6.00,
-    category: "bowls",
-    isVegetarian: true,
-  },
-  {
-    id: "pimento-cheese-bowl-medium",
-    name: "Pimento Cheese Bowl (Medium)",
-    description: "House-made pimento cheese",
-    price: 9.00,
-    category: "bowls",
-    isVegetarian: true,
-  },
-  {
-    id: "pimento-cheese-bowl-large",
-    name: "Pimento Cheese Bowl (Large)",
-    description: "House-made pimento cheese",
-    price: 12.00,
-    category: "bowls",
-    isVegetarian: true,
-  },
-  {
-    id: "hot-slaw-bowl-small",
-    name: "Hot Slaw Bowl (Small)",
-    description: "Warm, tangy slaw",
-    price: 6.00,
-    category: "bowls",
-    isVegetarian: true,
-  },
-  {
-    id: "hot-slaw-bowl-medium",
-    name: "Hot Slaw Bowl (Medium)",
-    description: "Warm, tangy slaw",
-    price: 9.00,
-    category: "bowls",
-    isVegetarian: true,
-  },
-  {
-    id: "hot-slaw-bowl-large",
-    name: "Hot Slaw Bowl (Large)",
-    description: "Warm, tangy slaw",
+    id: "egg-salad-bowl-large",
+    name: "Egg Salad Bowl (Large)",
+    description: "Made from scratch egg salad",
     price: 12.00,
     category: "bowls",
     isVegetarian: true,
@@ -321,6 +287,54 @@ export const menuItems: MenuItem[] = [
     price: 12.00,
     category: "bowls",
   },
+  {
+    id: "potato-salad-bowl-small",
+    name: "Potato, Pasta & Macaroni Salad Bowl (Small)",
+    description: "House-made potato, pasta, or macaroni salad",
+    price: 3.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "potato-salad-bowl-medium",
+    name: "Potato, Pasta & Macaroni Salad Bowl (Medium)",
+    description: "House-made potato, pasta, or macaroni salad",
+    price: 6.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "potato-salad-bowl-large",
+    name: "Potato, Pasta & Macaroni Salad Bowl (Large)",
+    description: "House-made potato, pasta, or macaroni salad",
+    price: 9.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "pimento-cheese-bowl-small",
+    name: "Siss's Pimento Cheese Bowl (Small)",
+    description: "Hand-shredded in house",
+    price: 8.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "pimento-cheese-bowl-medium",
+    name: "Siss's Pimento Cheese Bowl (Medium)",
+    description: "Hand-shredded in house",
+    price: 10.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
+  {
+    id: "pimento-cheese-bowl-large",
+    name: "Siss's Pimento Cheese Bowl (Large)",
+    description: "Hand-shredded in house",
+    price: 12.00,
+    category: "bowls",
+    isVegetarian: true,
+  },
 ];
 
 export const getItemsByCategory = (category: Category): MenuItem[] => {
@@ -337,4 +351,11 @@ export const getItemById = (id: string): MenuItem | undefined => {
 
 export const formatPrice = (price: number): string => {
   return `$${price.toFixed(2)}`;
+};
+
+export const formatItemPrice = (item: MenuItem): string => {
+  if (item.priceMax && item.priceMax !== item.price) {
+    return `${formatPrice(item.price)} - ${formatPrice(item.priceMax)}`;
+  }
+  return formatPrice(item.price);
 };
