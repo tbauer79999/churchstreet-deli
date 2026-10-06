@@ -9,6 +9,7 @@ import {
   CheckCircle2,
   Clock,
   Loader2,
+  Mail,
   MapPin,
   Phone,
 } from "lucide-react";
@@ -46,6 +47,12 @@ const contactInfo = [
     title: "Phone",
     content: "423-464-5144",
     link: "tel:+14234645144",
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    content: "churchstreetdeli191@gmail.com",
+    link: "mailto:churchstreetdeli191@gmail.com",
   },
 ];
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Clock, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
 const hours = [
   { day: "Mon - Sat", time: "11am - 4pm" },
@@ -93,6 +93,15 @@ export function Footer() {
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   (423) 464-5144
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-sm">
+                <Mail className="h-4 w-4 text-primary" />
+                <a
+                  href="mailto:churchstreetdeli191@gmail.com"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  churchstreetdeli191@gmail.com
                 </a>
               </li>
             </ul>
