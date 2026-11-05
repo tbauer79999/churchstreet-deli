@@ -141,7 +141,7 @@ export default function AboutPage() {
                   <p className="font-serif text-2xl font-bold text-primary">
                     Mon - Sat
                   </p>
-                  <p className="text-xs text-muted-foreground">11am - 6pm</p>
+                  <p className="text-xs text-muted-foreground">11am - 4pm</p>
                 </div>
               </motion.div>
             </motion.div>
